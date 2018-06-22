@@ -1,11 +1,18 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 
+import clipmod.mod_simplify 1.0
+
 ApplicationWindow {
     visible: true
     width: 280
     height: 300
     title: qsTr("ClipMod")
+
+    // Mods:
+    ModSimplify{
+        id: simply
+    }
 
     ScrollView {
         anchors.fill: parent
@@ -28,7 +35,8 @@ ApplicationWindow {
                         console.exception("Not yet implemented: clear_font!");
                         break;
                     case "simplify":
-                        console.exception("Not yet implemented: simplify!");
+                        console.log("simplify!");
+                        console.log("result: \"" + simply.apply() + "\"")
                         break;
                 }
             }
