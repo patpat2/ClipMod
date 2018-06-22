@@ -3,9 +3,9 @@ import QtQuick.Controls 2.2
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Scroll")
+    width: 280
+    height: 300
+    title: qsTr("ClipMod")
 
     ScrollView {
         anchors.fill: parent
@@ -16,6 +16,21 @@ ApplicationWindow {
             delegate: ItemDelegate {
                 text: qsTr("Modifier: ") + name
                 width: parent.width
+                onClicked: {
+                    switch (mod) {
+                    case "regexp":
+                        console.exception("Not yet implemented: regexp!");
+                        break;
+                    case "spell_check":
+                        console.exception("Not yet implemented: spell_check!");
+                        break;
+                    case "clear_font":
+                        console.exception("Not yet implemented: clear_font!");
+                        break;
+                    case "simplify":
+                        console.exception("Not yet implemented: simplify!");
+                        break;
+                }
             }
         }
     }
@@ -23,20 +38,25 @@ ApplicationWindow {
     ListModel {
         id: possibleModifiers
          ListElement {
+             mod: "regexp"
              name: qsTr("RegExp Edit")
              desc: qsTr("take a sub string matching by reg exp")
          }
          ListElement {
+             mod: "spell_check"
              name: qsTr("Spell checker")
              desc: qsTr("run the spell checker, and apply the 1st approach")
          }
          ListElement {
+             mod: "clear_font"
              name: qsTr("Clear font")
              desc: qsTr("convert rich text to plain")
          }
          ListElement {
-             name: qsTr("Simpify whitespace")
+             mod: "simplify"
+             name: qsTr("Simplify")
              desc: qsTr("QString::simplified()")
+
          }
      }
-}
+}}
