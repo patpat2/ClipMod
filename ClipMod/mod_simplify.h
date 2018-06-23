@@ -4,7 +4,9 @@
 #include <QObject>
 #include <QString>
 
-class ModSimplify : public QObject
+#include "base_mod.h"
+
+class ModSimplify : public QObject, public BaseMod
 {
     Q_OBJECT
 public:
@@ -13,7 +15,7 @@ public:
 signals:
 
 public slots:
-    QString apply();
+    QString apply() Q_DECL_OVERRIDE;
 
 private:
 };
