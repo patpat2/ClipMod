@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 
-import clipmod.mod_simplify 1.0
+import clipmod.clipboard_modifier 1.0
 
 ApplicationWindow {
     visible: true
@@ -10,8 +10,8 @@ ApplicationWindow {
     title: qsTr("ClipMod")
 
     // Mods:
-    ModSimplify{
-        id: simply
+    ClipboardModifier {
+        id: cm
     }
 
     ScrollView {
@@ -24,21 +24,23 @@ ApplicationWindow {
                 text: qsTr("Modifier: ") + name
                 width: parent.width
                 onClicked: {
+                    var mods = new Array;
                     switch (mod) {
                     case "regexp":
-                        console.exception("Not yet implemented: regexp!");
+                        mods.push(0);
                         break;
                     case "spell_check":
-                        console.exception("Not yet implemented: spell_check!");
+                        mods.push(1);
                         break;
                     case "clear_font":
-                        console.exception("Not yet implemented: clear_font!");
+                        mods.push(2);
                         break;
                     case "simplify":
-                        console.log("simplify!");
-                        console.log("result: \"" + simply.apply() + "\"")
+                        mods.push(3);
                         break;
                 }
+                // TODO: Pass the hole list
+                cm.runModification(mods.pop());
             }
         }
     }

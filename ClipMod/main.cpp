@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include "mod_simplify.h"
+#include "clipboard_modifier.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<ModSimplify>("clipmod.mod_simplify", 1, 0, "ModSimplify");
+    qmlRegisterType<ClipboardModifier>("clipmod.clipboard_modifier", 1, 0, "ClipboardModifier");
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

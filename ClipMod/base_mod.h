@@ -11,7 +11,8 @@ class BaseMod
      *
      * @returns the result, which is also written back to the clip board
      */
-    QString virtual apply() = 0;
+public:
+    QString virtual apply(const QString& input) = 0;
 
 };
 

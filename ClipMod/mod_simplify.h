@@ -1,23 +1,16 @@
 #ifndef MOD_SIMPLIFY_H
 #define MOD_SIMPLIFY_H
 
-#include <QObject>
 #include <QString>
 
 #include "base_mod.h"
 
-class ModSimplify : public QObject, public BaseMod
+class ModSimplify : public BaseMod
 {
-    Q_OBJECT
 public:
-    explicit ModSimplify(QObject *parent = nullptr);
+    explicit ModSimplify(){}
+    QString apply(const QString& input) Q_DECL_OVERRIDE;
 
-signals:
-
-public slots:
-    QString apply() Q_DECL_OVERRIDE;
-
-private:
 };
 
 #endif // MOD_SIMPLIFY_H

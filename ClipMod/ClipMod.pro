@@ -15,7 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mod_simplify.cpp \
-        base_mod.cpp
+        base_mod.cpp \
+    clipboard_modifier.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +33,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     mod_simplify.h \
-    base_mod.h
+    base_mod.h \
+    clipboard_modifier.h
