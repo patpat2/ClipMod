@@ -19,7 +19,7 @@ QString ClipboardModifier::runModification(const ClipboardModifier::Mod mod_to_a
 {
     // collect the mods to run
     QList<BaseMod*> mods;
-//    foreach (Mod m, mods_to_apply) {
+    // foreach (Mod m, mods_to_apply) {
         switch (mod_to_apply) {
         case spellCheckFeelingLucky:
         case clippingByRegExp:
@@ -29,7 +29,7 @@ QString ClipboardModifier::runModification(const ClipboardModifier::Mod mod_to_a
         case simplify:
             mods << new ModSimplify();
         }
-//    }
+    // }
 
     QString subtype;
     QString text = _clip_board->text(subtype, QClipboard::Clipboard);
