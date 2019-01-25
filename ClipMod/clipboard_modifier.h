@@ -5,6 +5,10 @@
 #include <QObject>
 #include <QString>
 
+
+/**
+ * Modifies the text in the clipboard
+ */
 class ClipboardModifier : public QObject
 {
     Q_OBJECT
